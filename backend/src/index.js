@@ -1,15 +1,21 @@
 import express from "express";
+import cors from "cors";
 
 const app = express();
 
 app.use(express.json());
 
+app.use(cors());
+
 app.post("/login", async (req, res) => {
-  console.log(req.body);
+  const data = req.body;
 
-  console.log("---222");
+  if (data.email === "enkhtuvshin@gmail.com" && data.password === "123") {
+    res.send({ status: "success", token: "tokenformbackend" });
+  }
 
-  return res.send("213123");
+  console.log(data);
+  res.send({ status: "failed", message: "Invalid password" });
 });
 
 app.listen(3000, () => {
