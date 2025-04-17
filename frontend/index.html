@@ -9,12 +9,22 @@
 
   <form id="login-form">
     <input type="email" name="email" placeholder="enter your email" required />
-    <input type="password"/ name="password" placeholder="enter your password"
-    required/>
+    <input
+      type="password"
+      name="password"
+      placeholder="enter your password"
+      required
+    />
     <button type="submit">Signin</button>
   </form>
 
+  <button onclick="goRegister()" id="register-button">Register</button>
+
   <script>
+    const goRegister = () => {
+      window.location.replace("/register");
+    };
+
     const form = document.getElementById("login-form");
 
     form.addEventListener("submit", async e => {

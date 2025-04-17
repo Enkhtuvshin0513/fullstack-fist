@@ -1,20 +1,4 @@
 <!DOCTYPE html>
 <html>
   <h1>List</h1>
-  <script>
-    const getData = async () => {
-      const token = localStorage.getItem("auth-token");
-
-      const response = await fetch(`http://localhost:3000/books`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          "Auth-token": `barer ${token}`
-        },
-        body: JSON.stringify({ email, password })
-      }).catch(() => {
-        window.alert("Email password buruu bn!");
-      });
-    };
-  </script>
 </html>
